@@ -1,0 +1,9 @@
+__pycache__
+*.pyc
+.vscode
+.project
+.settings
+.idea
+*.iml
+
+.DS_Store
