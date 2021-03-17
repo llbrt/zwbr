@@ -1,10 +1,24 @@
 # DISCLAIMER
 
-```diff
-- This project was created thanks to documentations and tools (such as OpenZWave) freely available on the Internet -
-- It is NOT certified in any way, use it at your own risks -
-- If the manufacturer of your controller provides a tool to save and restore a controller, you should use it -
-```
+This project was created thanks to documentations and tools (such as OpenZWave)
+freely available on the Internet.
+It is NOT certified in any way, use it at your own risks.
+If the manufacturer of your controller provides a tool to save and
+restore a controller, you should use it.
+
+## Why?
+
+My controller lost its configuration. I had to include again all the
+modules (some were not really easy to reach) and reconfigure the home automation
+software.
+
+But I didn't find any tool for my controller to prevent this from happening again, so
+I created this project.
+
+With this command, I saved the controller and restored the network on a more recent
+controller and now the home automation software works better.
+
+I will now backup the controller whenever the network is modified.
 
 # zwbr
 
