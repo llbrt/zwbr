@@ -17,7 +17,8 @@ p = ArgumentParser(description="Z-Wave controller NVM backup and restore")
 p.add_argument(dest="device", help="device of the Z-Wave controller (like COM4 for Windows or /dev/ttyACM0 for Linux)")
 p.add_argument('-v', '--verbose', dest="verbose", action='store_true', help="enable verbose mode")
 p.add_argument('-n', '--nodes', dest="nodes", action='store_true', help="display nodes")
-p.add_argument('-s', '--scan-nodes', dest="full_scan", action='store_true', help="try all the node ids (slower)")
+p.add_argument('-a', '--scan-all-nodes', dest="full_scan", action='store_true', help="try all the node ids (slower)")
+p.add_argument('-s', '--soft-reset', dest="soft_reset", action='store_true', help="performes a soft reset of the controller")
 p.add_argument('-b', '--backup-file', dest="backup_dest", metavar="dest-file", help="backup the controller in the destination file")
 p.add_argument('-r', '--restore-file', dest="restore_source", metavar="source-file", type=FileType('rb'), help="restore the controller from the source file")
 args = p.parse_args()
@@ -56,5 +57,9 @@ if args.restore_source:
     except BaseException:
         logging.exception("Restoration failed")
     del restore
+
+elif args.soft_reset:
+    # Soft reset done by restore, no need to do it again
+    controller.soft_reset()
 
 controller.close()

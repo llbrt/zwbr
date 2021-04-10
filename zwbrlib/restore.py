@@ -49,11 +49,7 @@ class ZwRestoration(DtOp):
         self._success = True
 
         # Soft reset the controller to take the new NVM into account
-        logging.info("--- soft reset --")
         self._controller.soft_reset()
-        logging.info("--- done --------")
-        logging.info("")
-        logging.info("The OS device id may have changed")
 
     def _confirm_restore(self):
         logging.info("")

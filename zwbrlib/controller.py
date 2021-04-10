@@ -32,11 +32,13 @@ class Controller:
     def soft_reset(self):
         """ Performs a soft reset of the controller.
         The opened handler may not be valid after this call"""
-        logging.debug("Soft reset requested")
+        logging.info("--- soft reset --")
         request_frame = message.request_SoftReset()
         self._write_frame(request_frame)
         time.sleep(2)
-        logging.debug("Soft reset done")
+        logging.info("--- done --------")
+        logging.info("")
+        logging.info("The OS device id may have changed")
 
     def request(self, request_frame: Frame, reply_name, reply_arg1 = None):
         reply_frame = self._get_reply_frame(request_frame)

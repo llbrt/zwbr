@@ -59,6 +59,11 @@ The home-id and some informations about the controller are displayed (manufactur
 
 The option `-n` lists the nodes and display information about them.
 
+## Soft reset
+
+The option `-s` makes a soft reset of the controller. The OS device id may change after this
+call (`COM4` becoming `COM5` or `/dev/ttyACM0` becoming `/dev/ttyACM1`).
+
 ## Backup
 
 Writes the NVM to the destination file. The destination file must not exist and
