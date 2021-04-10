@@ -39,6 +39,10 @@ It works on Windows and Linux (and probably MacOS).
 This tool needs Python 3.6 or upper; the module `pyserial` must be installed.
 The other required modules should be installed by default.
 
+```
+pip3 install -r requirements.txt
+````
+
 # Usage
 
 Launch `python3 zwbr.py -h` to display the help message.
